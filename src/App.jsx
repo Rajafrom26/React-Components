@@ -1,20 +1,19 @@
-import { Fragment } from 'react'
-import CounterComp from './CounterComp'
-import TodoComp from './TodoComp'
-import FolderComp from './FolderComp'
+import React, { Fragment } from "react";
+
+import NavbarComp from "./Components/NavbarComp";
+import Routings from "./Routings/Routings";
+import ProductComp from "./Components/ProductComp";
+import ProductDetail from "./Components/ProductDetail";
 
 
 function App() {
   return (
     <Fragment>
-
-     {/* <CounterComp /> <hr className='text-primary'/> <br /> */}
-     {/* <TodoComp /> */}
-     <FolderComp />
-     
-
+      <NavbarComp />
+        <ProductDetail />
+      <Routings />
     </Fragment>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import './App.css'
+
+
 
 class CounterComp extends Component {
   state = { count: 0 }
@@ -13,9 +14,8 @@ class CounterComp extends Component {
   }
 
   render() {
-    
     return (
-      <div>
+      <div className="counter-container">
         <h1>Welcome to React</h1>
         <h3>Counter Value: {this.state.count}</h3>
         <button className='btn btn-primary me-2' onClick={this.IncrementHandler}>

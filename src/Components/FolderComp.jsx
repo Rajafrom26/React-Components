@@ -12,7 +12,7 @@ class FolderComp extends Component {
       let charCount = text.length;
       let words = text.trim().split(" ");
       let sentenceCount =
-        words.filter((word) => word.endsWith(".") || "?").length - 1;
+        words.filter((word) => word.endsWith(".")).length;
       this.setState({
         characters: charCount,
         count: sentenceCount,
@@ -28,7 +28,7 @@ class FolderComp extends Component {
     };
 
     return (
-      <div className="container text-center">
+      <div className="container text-center dev">
         <div className="row border border-1 rounded p-3">
           <div className="col-lg-6">
             <textarea

@@ -31,13 +31,12 @@ class TodoComp extends Component {
       });
     };
 
-    // replacement for $SELECTION_PLACEHOLDER$
     {
       const todos = (this.state && this.state.todos) || [];
       const textValue = (this.state && this.state.text) || "";
 
       return (
-        <div className="container bg-body-tertiary p-4 rounded-3">
+        <div className="container bg-body-tertiary p-4 rounded-3 dev3">
           <form onSubmit={addTodo} className="mb-3 d-flex">
             <input
               type="text"
