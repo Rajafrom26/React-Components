@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Magnifier from "react-magnifier";
 import { useParams } from "react-router-dom";
 
 const ProductDetail = () => {
@@ -40,14 +39,7 @@ const ProductDetail = () => {
       {product && (
         <div className="row">
           <div className="col-lg-6">
-            <Magnifier
-              src={product.strMealThumb}
-              width={600}
-              zoomFactor={0.5}
-              mgShape="circle"
-              mgHeight={300}
-              mgWidth={300}
-            />
+            <img src={product.strMealThumb} className="img-0 w-100"/>
           </div>
           <div className="col-lg-6">
             <div className="row">
