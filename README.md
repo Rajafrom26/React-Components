@@ -1,4 +1,4 @@
-# ⚛️ [Meal-Finder]
+# ⚛️ Meal-Finder
 
 **A dynamic, modern web application built with React and powered by TheMealDB API.**
 
@@ -66,10 +66,6 @@ The application should now be running in your browser at `http://localhost:5173`
 * All API calls utilize `axios`.
 * The `ProductDetail` component uses the `lookup.php?i={id}` endpoint for comprehensive data, ensuring all necessary fields (like `strYoutube`) are available.
 
-### Custom Component Alert
-
-* The native `alert()` is replaced by custom logic (e.g., a modal or toast) to ensure a cohesive UI when a data field, such as the video link, is missing (`null`).
-
 ## ✍️ Author
 
-* **[Rajafrom26]** - *Initial Work* - [https://github.com/Rajafrom26/Meal-finder.git]
+* **Rajafrom26** - *Initial Work* - https://github.com/Rajafrom26/Meal-finder.git
