@@ -5,7 +5,8 @@ import "../src/Stylings.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { BrowserRouter } from "react-router-dom";
-import ContextProvider from "./Routings/Context/ContextProvider.jsx";
+import ContextProvider from "./Context/ContextProvider.jsx";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

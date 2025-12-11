@@ -1,24 +1,4 @@
-.counter-container {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-.dev {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-.dev1 {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-.dev3 {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  margin-top: 20px;
-}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;

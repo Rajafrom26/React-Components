@@ -86,3 +86,10 @@ class TodoComp extends Component {
 }
 
 export default TodoComp;
+
+/**.dev3 {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 20px;
+} */

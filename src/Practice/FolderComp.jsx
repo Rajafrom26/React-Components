@@ -65,3 +65,10 @@ class FolderComp extends Component {
 }
 
 export default FolderComp;
+
+
+/**.dev {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */

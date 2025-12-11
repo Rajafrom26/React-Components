@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { myState } from "../Routings/Context/ContextProvider";
+import { Link, useParams } from "react-router-dom";
+import { myState } from "../Context/ContextProvider";
 
 const NavbarComp = () => {
-  const [search, setState] = React.useContext(myState);
+  const [ , setState] = React.useContext(myState);
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -29,7 +29,7 @@ const NavbarComp = () => {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/CounterComp" className="nav-link">
                 CounterComp
               </Link>
@@ -48,7 +48,7 @@ const NavbarComp = () => {
               <Link to="/TodoComp" className="nav-link">
                 TodoComp
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link to="/MealsComp" className="nav-link">
                 MealsComponent

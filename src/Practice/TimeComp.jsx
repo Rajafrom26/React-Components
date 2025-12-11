@@ -22,3 +22,8 @@ function TimeComp() {
 
 export default TimeComp
 
+// .dev1 {
+//   margin: 0 auto;
+//   padding: 2rem;
+//   text-align: center;
+// }

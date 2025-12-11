@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { myState } from "../Routings/Context/ContextProvider";
+import { myState } from "../Context/ContextProvider";
 
 const ProductComp = () => {
   const [products, setProducts] = React.useState([]);

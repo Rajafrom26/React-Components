@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { Component, useContext } from "react";
-import { myState } from "../Routings/Context/ContextProvider";
+import { myState } from "../Context/ContextProvider";
+import { Link } from "react-router-dom";
 
 const MealsComp = () => {
-  const [categoriesName, setcat] = useContext(myState);
+  const [categoriesName] = useContext(myState);
   const [categories, setCategories] = React.useState([]);
+
 
   React.useEffect(() => {
     fetchCategories();
@@ -21,18 +23,20 @@ const MealsComp = () => {
     <div className="container">
       <div className="row mt-5">
         {categories.meals && categories.meals.length > 0 ? (
-          categories.meals.map((item) => (
+          categories.meals.map((item, i) => (
             <div className="col-md-4 mb-4" key={item.idMeal}>
-              <div className="card rounded p-3 shadow">
+              <Link
+                to={`/ProductDetail/${item.idMeal}`}
+                className="card rounded p-3 shadow"
+                key={i}
+              >
                 <img
                   src={item.strMealThumb}
                   className="card-img-top"
                   alt={item.strMeal}
                 />
-                <div className="card-body">
-                  <h5 className="card-title">{item.strMeal}</h5>
-                </div>
-              </div>
+                <h5 className="card-title">{item.strMeal}</h5>
+              </Link>
             </div>
           ))
         ) : (

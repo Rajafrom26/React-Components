@@ -30,3 +30,11 @@ class CounterComp extends Component {
 }
 
 export default CounterComp
+
+
+/**.counter-container {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+ */
