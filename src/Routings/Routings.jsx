@@ -4,7 +4,7 @@ import CounterComp from "../Practice/CounterComp";
 import ProductComp from "../Components/ProductComp";
 import MealsComp from "../Components/MealsComp";
 import ProductDetail from "../Components/ProductDetail";
-import Favourite from "../Components/favourite";
+import Favourite from "../Components/Favourite";
 
 
 const Routings = () => {
