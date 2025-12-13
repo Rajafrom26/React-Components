@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { Component, useContext } from "react";
+import React, { Component, useContext, useEffect } from "react";
 import { myState } from "../Context/ContextProvider";
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ const MealsComp = () => {
   const [categories, setCategories] = React.useState([]);
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchCategories();
   }, [categoriesName]);
 

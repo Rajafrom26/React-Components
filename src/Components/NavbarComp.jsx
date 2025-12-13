@@ -29,6 +29,7 @@ const NavbarComp = () => {
                 Home
               </Link>
             </li>
+            
             {/* <li className="nav-item">
               <Link to="/CounterComp" className="nav-link">
                 CounterComp
@@ -52,6 +53,11 @@ const NavbarComp = () => {
             <li className="nav-item">
               <Link to="/MealsComp" className="nav-link">
                 MealsComponent
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/Favourite" className="nav-link">
+                Favorites
               </Link>
             </li>
           </ul>
