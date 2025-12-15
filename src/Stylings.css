@@ -6,17 +6,32 @@
   border-radius: 15px;
   padding: 5px;
 }
+.screen {
+  width: 100%;
+}
 .dev2 {
   text-decoration: none;
 }
-
-/* .badge {
-  position: absolute;
-  top: 10;
-  left: 20px;
-} */
- .badge-0 {
-  position: absolute;
-  left: 130px;
-  top: 120px;
- }
+.badge-0 {
+  left: 10px;
+  top: 10px;
+}
+.cart {
+ 
+  width: 50%;
+}
+@media  screen and (width: 1024px) {
+  .layer-1{
+    margin : 10px 20px 0 155px;
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .screen {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  .img-magnifier {
+    width: 100%;
+  }
+}

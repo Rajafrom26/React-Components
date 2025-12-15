@@ -3,14 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import store from "../Redux/store";
 import { Link } from "react-router-dom";
 import { removeToFav } from "../Redux/cartSlice";
+import { BsCartPlusFill } from "react-icons/bs";
 
 const Favourite = () => {
   const dispatch = useDispatch();
   const favoritesData = useSelector((store) => store.fav);
 
   const removeHandler = (idMeal) => {
-    dispatch(removeToFav(idMeal))
-  }
+    dispatch(removeToFav(idMeal));
+  };
 
   return (
     <div className="container d-flex mt-5">
@@ -22,11 +23,19 @@ const Favourite = () => {
                 <img src={item.strMealThumb} alt={item.idMeal} />
                 <div className="row">
                   <div className="col-lg-6">
-                    <button className="btn bg-danger w-100" onClick={() => removeHandler(item.idMeal)}>Remove</button>
+                    <button
+                      className="btn bg-danger w-100"
+                      onClick={() => removeHandler(item.idMeal)}
+                    >
+                      Remove
+                    </button>
                   </div>
                   <div className="col-lg-6">
-                    <Link to={`/ProductDetail/${item.idMeal}`} key={item.idMeal}>
-                      <button className="btn bg-black text-white w-100" >
+                    <Link
+                      to={`/ProductDetail/${item.idMeal}`}
+                      key={item.idMeal}
+                    >
+                      <button className="btn bg-black text-white w-100">
                         Details
                       </button>
                     </Link>
@@ -36,7 +45,14 @@ const Favourite = () => {
             </div>
           ))
         ) : (
-          <h3 className="d-flex justify-content-center">Cart Is Empty</h3>
+          <figure>
+            <h3>
+              <BsCartPlusFill className="me-2" />
+              Cart Is Empty
+            </h3>
+            <img src="https://img.icons8.com/clouds/1200/add-shopping-cart.jpg" alt="img-cart" className="cart" />
+            <Link to="/" className="btn btn-danger position-absolute bottom-0 mb-5">Home</Link>
+          </figure>
         )}
       </div>
     </div>

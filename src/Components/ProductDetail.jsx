@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addToFav } from "../Redux/cartSlice";
+import Magnifier from "../Magnifier/Magnifier";
 
 const ProductDetail = () => {
   const [product, setProduct] = useState(null);
@@ -65,17 +66,20 @@ const ProductDetail = () => {
     <div className="container mt-5">
       {product && (
         <div className="row">
-          <div className="col-lg-6">
-            <img src={product.strMealThumb} className="img-0 w-100 rounded" />
-            <p className="badge badge-0 bg-black">
-              Category: {product.strCategory}
-            </p>
-            <p className="badge bg-secondary ms-2">{product.strTags}</p>
+          <div className="col-lg-6 layer-1">
+            {/* <img src={product.strMealThumb} className="img-0 w-100 rounded" /> */}
+            <figure className="position-relative">
+              <Magnifier src={product.strMealThumb} zoom={1.9} />
+              <p className="badge bg-black position-absolute badge-0">
+                Category: {product.strCategory}
+              </p>
+            </figure>
+
             <div className="row mt-4 mb-3">
               <div className="col-lg-3">
                 <a
                   href={product.strYoutube || "#"}
-                  className="btn btn-info text-light d-flex justify-content-center w-100"
+                  className="btn btn-info text-light d-flex justify-content-center screen"
                   target="_blank"
                   title="see Video for the reference"
                   rel="noopener"
@@ -86,12 +90,8 @@ const ProductDetail = () => {
               </div>
               <div className="col-lg-6">
                 <button
-                  className={`btn ${
-                    isAdded ? "btn-secondary" : "btn-primary"
-                  }`}
-                  title={
-                    isAdded ? "Already in favorites" : "Click to add fav"
-                  }
+                  className={`btn ${isAdded ? "btn-secondary" : "btn-primary"} screen-1`}
+                  title={isAdded ? "Already in favorites" : "Click to add fav"}
                   disabled={isAdded}
                   onClick={() => AddToFavHandler(product)}
                 >
@@ -100,8 +100,10 @@ const ProductDetail = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-6">
-            <p className="badge bg-secondary">{product.strMeal}</p>
+          <div className="col-lg-6 layer-1">
+            <p>
+              <strong>Meal name :</strong> {product.strMeal}
+            </p>
             <div className="card p-4">
               <strong>Instructions:</strong>
               <ol className="mt-2">
