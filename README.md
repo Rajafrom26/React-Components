@@ -16,7 +16,7 @@ This project serves as a showcase of modern React development practices, focusin
   * **⚡ Redux State Management:** Centralized state for managing the favorites list across the application.
   * **📱 Responsive Design:** Styled using **Bootstrap** for mobile-first, responsive layouts.
 
-  * **Usage Of Magnifier** `` <Magnifier src="/your-image.jpg" zoom={2} /> *
+  * **Usage Of Magnifier** ``` <Magnifier src="/your-image.jpg" zoom={2} /> ```
 
 ## 🛠️ Tech Stack
 
