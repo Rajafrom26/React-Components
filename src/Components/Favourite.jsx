@@ -14,11 +14,11 @@ const Favourite = () => {
   };
 
   return (
-    <div className="container d-flex mt-5">
+    <div className="container mt-5">
       <div className="row">
         {favoritesData.length > 0 ? (
           favoritesData.map((item, i) => (
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-6">
               <div className="card mb-5" key={i}>
                 <img src={item.strMealThumb} alt={item.idMeal} />
                 <div className="row">
@@ -33,7 +33,7 @@ const Favourite = () => {
                   <div className="col-lg-6">
                     <Link
                       to={`/ProductDetail/${item.idMeal}`}
-                      key={item.idMeal}
+                      key={i}
                     >
                       <button className="btn bg-black text-white w-100">
                         Details

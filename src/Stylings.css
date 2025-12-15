@@ -34,4 +34,12 @@
   .img-magnifier {
     width: 100%;
   }
+  .medium{
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .medium {
+    width: 100%;
+  }
 }
