@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { myState } from "../Context/ContextProvider";
+import Magnifier from "../Magnifier/Magnifier";
 
 const ProductComp = () => {
   const [products, setProducts] = React.useState([]);

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-const Magnifier = ({ src, zoom = 2 }) => {
+const Magnifier = ({ src, zoom = 2, style, className}) => {
   const [show, setShow] = useState(false);
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const imgRef = useRef(null);
@@ -27,7 +27,7 @@ const Magnifier = ({ src, zoom = 2 }) => {
       onMouseLeave={() => setShow(false)}
       onMouseMove={handleMove}
     >
-      <img ref={imgRef} src={src} width="500" className="img-magnifier"/>
+      <img ref={imgRef} src={src} width="500" style={style} className={className}/>
 
       {show && (
         <div

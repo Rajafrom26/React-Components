@@ -3,13 +3,21 @@ import { Link, useParams } from "react-router-dom";
 import { myState } from "../Context/ContextProvider";
 
 const NavbarComp = () => {
-  const [ , setState] = React.useContext(myState);
+  const [, setState] = React.useContext(myState);
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          LOGO
+          <img
+            src="/image.png"
+            alt="img-logo"
+            style={{
+              height: "50px",
+              width: "auto",
+              objectFit: "contain",
+            }}
+          />
         </Link>
         <button
           className="navbar-toggler"
@@ -29,7 +37,7 @@ const NavbarComp = () => {
                 Home
               </Link>
             </li>
-            
+
             {/* <li className="nav-item">
               <Link to="/CounterComp" className="nav-link">
                 CounterComp

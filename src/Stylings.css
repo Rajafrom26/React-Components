@@ -5,6 +5,7 @@
   text-decoration: none;
   border-radius: 15px;
   padding: 5px;
+  background: linear-gradient(to right, #ffffff, #f0f0f0);
 }
 .screen {
   width: 100%;
