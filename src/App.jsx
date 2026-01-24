@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 
 import NavbarComp from "./Components/NavbarComp";
 import Routings from "./Routings/Routings";
+import Footer from "./Components/Footer";
 
 
 
@@ -10,6 +11,7 @@ function App() {
     <Fragment>
       <NavbarComp />
       <Routings />
+      <Footer />
     </Fragment>
   );
 }

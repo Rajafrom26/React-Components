@@ -20,7 +20,7 @@ const MealsComp = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container Meals">
       <div className="row mt-5">
         {categories.meals && categories.meals.length > 0 ? (
           categories.meals.map((item, i) => (

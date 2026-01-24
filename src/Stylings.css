@@ -21,6 +21,25 @@
  
   width: 50%;
 }
+.social-link-linkedIn-parent {
+  transition: all 0.2s ease-in-out;
+}
+.social-link-linkedIn-parent:hover {
+  color: #0a66c2 !important;
+}
+/* stylings for github */
+
+.social-link-git-parent {
+  transition: all 0.2s ease-in-out;
+}
+.social-link-git-parent:hover {
+  color: #ffffff !important; 
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
+.Meals {
+  height: 90vh;
+}
+
 @media  screen and (width: 1024px) {
   .layer-1{
     margin : 10px 20px 0 155px;

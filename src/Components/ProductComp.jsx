@@ -25,7 +25,7 @@ const ProductComp = () => {
 
 
   return (
-    <div className="container p-3">
+    <div className="container p-3 Meals">
       <h3>Products Page</h3>
       <div className="row m-3">
         {products && products.categories && products.categories.length > 0 ? (

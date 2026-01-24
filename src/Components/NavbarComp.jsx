@@ -37,27 +37,6 @@ const NavbarComp = () => {
                 Home
               </Link>
             </li>
-
-            {/* <li className="nav-item">
-              <Link to="/CounterComp" className="nav-link">
-                CounterComp
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/FolderComp" className="nav-link">
-                FolderComp
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/TimeComp" className="nav-link">
-                TimeComp
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/TodoComp" className="nav-link">
-                TodoComp
-              </Link>
-            </li> */}
             <li className="nav-item">
               <Link to="/MealsComp" className="nav-link">
                 MealsComponent
