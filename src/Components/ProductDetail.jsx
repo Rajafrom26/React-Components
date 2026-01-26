@@ -63,13 +63,15 @@ const ProductDetail = () => {
   const isAdded = favorites.some((item) => item.idMeal === id);
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 min-vh-100">
       {product && (
         <div className="row">
           <div className="col-lg-6 layer-1">
             {/* <img src={product.strMealThumb} className="img-0 w-100 rounded" /> */}
             <figure className="position-relative">
-              <Magnifier src={product.strMealThumb} zoom={1.9} />
+              <Magnifier src={product.strMealThumb} zoom={1.9} 
+                className="w-75"
+              />
               <p className="badge bg-black position-absolute badge-0">
                 Category: {product.strCategory}
               </p>

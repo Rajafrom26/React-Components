@@ -10,7 +10,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white pt-5 pb-3 position-relative">
+    <footer className="bg-black text-white pt-5 pb-3">
       <div className="container">
         <div className="row">
           {/* Brand Section */}
@@ -74,7 +74,7 @@ const Footer = () => {
                 >
                   <path d={paths.github} />
                 </svg>
-                <spn>github</spn>
+                <span>github</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/rajkumar-puli-0246473a7/"

@@ -37,7 +37,75 @@
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
 }
 .Meals {
-  height: 90vh;
+  min-height: 90vh;
+}
+
+
+
+
+.steam-line {
+  opacity: 0;
+  animation: steamRise 1.5s infinite ease-in-out;
+}
+
+/* staggered delays for the natural 'bubbling' look */
+.steam-one { animation-delay: 0s; }
+.steam-two { animation-delay: 0.4s; }
+.steam-three { animation-delay: 0.8s; }
+
+@keyframes steamRise {
+  0% {
+    transform: translateY(4px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+}
+.loader-wrapper {
+  position: relative;
+}
+
+/* The Whisk rotation */
+.whisk-group {
+  transform-origin: 12px 12px;
+  animation: stir 1.2s infinite linear;
+}
+
+@keyframes stir {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* The Bowl slight wobble */
+.bowl {
+  animation: wobble 1.2s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+/* Text pulse effect */
+.animate-flicker {
+  animation: flicker 1.5s infinite;
+  letter-spacing: 2px;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.br-sec {
+  width: 7rem;
+  min-width: fit-content;
 }
 
 @media  screen and (width: 1024px) {
