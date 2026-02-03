@@ -10,6 +10,9 @@
 .screen {
   width: 100%;
 }
+.screen-1 {
+  min-width: 50%;
+}
 .dev2 {
   text-decoration: none;
 }
@@ -107,6 +110,7 @@
   width: 7rem;
   min-width: fit-content;
 }
+
 
 @media  screen and (width: 1024px) {
   .layer-1{

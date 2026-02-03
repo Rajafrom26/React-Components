@@ -83,7 +83,7 @@ const Favourite = () => {
             className="btn btn-danger btn-lg px-5 rounded-pill shadow transform transition hover-scale"
           >
             <BsArrowLeft className="me-2" />
-            Back to Menu
+            Back to Home
           </Link>
         </div>
       )}

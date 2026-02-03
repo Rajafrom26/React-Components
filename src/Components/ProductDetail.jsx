@@ -67,18 +67,17 @@ const ProductDetail = () => {
       {product && (
         <div className="row">
           <div className="col-lg-6 layer-1">
-            {/* <img src={product.strMealThumb} className="img-0 w-100 rounded" /> */}
             <figure className="position-relative">
               <Magnifier src={product.strMealThumb} zoom={1.9} 
-                className="w-75"
+                className="img-magnifier"
               />
               <p className="badge bg-black position-absolute badge-0">
                 Category: {product.strCategory}
               </p>
             </figure>
 
-            <div className="row mt-4 mb-3">
-              <div className="col-lg-3">
+            <div className="row mt-4 mb-3 justify-content-around">
+              <div className="col-md-3">
                 <a
                   href={product.strYoutube || "#"}
                   className="btn btn-info text-light d-flex justify-content-center screen"
@@ -90,7 +89,7 @@ const ProductDetail = () => {
                   video
                 </a>
               </div>
-              <div className="col-lg-6">
+              <div className="col-md-6">
                 <button
                   className={`btn ${isAdded ? "btn-secondary" : "btn-primary"} screen-1`}
                   title={isAdded ? "Already in favorites" : "Click to add fav"}
