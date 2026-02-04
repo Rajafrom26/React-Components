@@ -1,21 +1,20 @@
 import axios from "axios";
-import React, { Component, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { myState } from "../Context/ContextProvider";
 import { Link } from "react-router-dom";
 import MealLoader from "../MealLoader/MealLoader";
 
 const MealsComp = () => {
   const [categoriesName] = useContext(myState);
-  const [categories, setCategories] = React.useState([]);
+  const [categories, setCategories] = useState([]);
   const [Loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchCategories = async () => {
       try {
         setLoading(true);
-
         const { data } = await axios.get(
-          `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoriesName}`,
+          `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoriesName}`
         );
         setCategories(data.meals || []);
       } catch (error) {
@@ -28,12 +27,11 @@ const MealsComp = () => {
     if (categoriesName) {
       fetchCategories();
     }
-    if (!categoriesName) return;
   }, [categoriesName]);
 
   return (
     <div className="container Meals">
-      <div className="row m(t-5">
+      <div className="row mt-5">
         {!categoriesName ? (
           <div className="d-flex flex-column justify-content-center align-items-center vh-100 text-center">
             <svg
@@ -63,19 +61,23 @@ const MealsComp = () => {
         ) : Loading ? (
           <MealLoader />
         ) : (
-          categories.map((item, i) => (
-            <div className="col-md-4 mb-4" key={item.idMeal}>
+          categories.map((item) => (
+            <div
+              className="col-sm-6 col-md-4 col-lg-3 mb-4 d-flex"
+              key={item.idMeal}
+            >
               <Link
                 to={`/ProductDetail/${item.idMeal}`}
-                className="card rounded p-3 shadow"
-                key={i}
+                className="card rounded shadow-sm text-decoration-none flex-fill meal-card"
               >
                 <img
                   src={item.strMealThumb}
-                  className="card-img-top"
+                  className="card-img-top img-fluid rounded-top"
                   alt={item.strMeal}
                 />
-                <h5 className="card-title">{item.strMeal}</h5>
+                <div className="card-body text-center">
+                  <h6 className="card-title text-dark">{item.strMeal}</h6>
+                </div>
               </Link>
             </div>
           ))

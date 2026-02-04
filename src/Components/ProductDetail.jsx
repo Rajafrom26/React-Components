@@ -8,7 +8,6 @@ import Magnifier from "../Magnifier/Magnifier";
 const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const dispatch = useDispatch();
-
   const { id } = useParams();
 
   useEffect(() => {
@@ -31,19 +30,19 @@ const ProductDetail = () => {
   const handleMissingLink = () => {
     alert(`Video Unavailable for ${product.strMeal}!`);
   };
+
   const handelVideoClick = (event) => {
     if (!product.strYoutube) {
       event.preventDefault();
       handleMissingLink();
     }
   };
+
   const extractIngredientsWithMeasures = (product) => {
     const items = [];
-
     for (let i = 1; i <= 20; i++) {
       const ing = product[`strIngredient${i}`];
       const measure = product[`strMeasure${i}`];
-
       if (ing && ing.trim() !== "") {
         items.push({
           ingredient: ing,
@@ -51,7 +50,6 @@ const ProductDetail = () => {
         });
       }
     }
-
     return items;
   };
 
@@ -65,66 +63,84 @@ const ProductDetail = () => {
   return (
     <div className="container mt-5 min-vh-100">
       {product && (
-        <div className="row">
-          <div className="col-lg-6 layer-1">
-            <figure className="position-relative">
-              <Magnifier src={product.strMealThumb} zoom={1.9} 
-                className="img-magnifier"
-              />
-              <p className="badge bg-black position-absolute badge-0">
+        <div className="row g-4">
+          {/* Left Section */}
+          <div className="col-lg-6">
+            <div className="card shadow-lg border-0 rounded-3 p-3">
+              {/* Centered Image */}
+              <figure className="d-flex justify-content-center mb-3">
+                <Magnifier
+                  src={product.strMealThumb}
+                  zoom={2}
+                  className="img-fluid rounded"
+                />
+              </figure>
+              <span className="badge bg-dark mx-auto mb-3 position-absolute">
                 Category: {product.strCategory}
-              </p>
-            </figure>
+              </span>
 
-            <div className="row mt-4 mb-3 justify-content-around">
-              <div className="col-md-3">
+              {/* Buttons aligned center */}
+              <div className="d-flex justify-content-center gap-3">
                 <a
                   href={product.strYoutube || "#"}
-                  className="btn btn-info text-light d-flex justify-content-center screen"
+                  className="btn btn-outline-info"
                   target="_blank"
-                  title="see Video for the reference"
                   rel="noopener"
                   onClick={handelVideoClick}
                 >
-                  video
+                  🎥 Watch Video
                 </a>
-              </div>
-              <div className="col-md-6">
                 <button
-                  className={`btn ${isAdded ? "btn-secondary" : "btn-primary"} screen-1`}
-                  title={isAdded ? "Already in favorites" : "Click to add fav"}
+                  className={`btn ${
+                    isAdded ? "btn-success" : "btn-primary"
+                  }`}
                   disabled={isAdded}
                   onClick={() => AddToFavHandler(product)}
                 >
-                  {isAdded ? "Succesfully added!" : "Add to favorites"}
+                  {isAdded ? "✔ Added to Favorites" : "❤️ Add to Favorites"}
                 </button>
               </div>
             </div>
           </div>
-          <div className="col-lg-6 layer-1">
-            <p>
-              <strong>Meal name :</strong> {product.strMeal}
-            </p>
-            <div className="card p-4">
-              <strong>Instructions:</strong>
-              <ol className="mt-2">
-                {product.strInstructions
-                  .split(/\d+\.\s/)
-                  .filter((step) => step.trim() !== "")
-                  .map((step, index) => (
-                    <li key={index}>{step.trim()}</li>
+
+          {/* Right Section */}
+          <div className="col-lg-6">
+            <div className="card shadow-sm border-0 p-4">
+              <h3 className="fw-bold mb-3 text-center">{product.strMeal}</h3>
+
+              {/* Instructions */}
+              <div className="mb-4">
+                <h5 className="text-primary">📖 Instructions</h5>
+                <ul className="list-group list-group-flush mt-2">
+                  {product.strInstructions
+                    .split(/\d+\.\s/)
+                    .filter((step) => step.trim() !== "")
+                    .map((step, index) => (
+                      <li
+                        key={index}
+                        className="list-group-item border-0 ps-0"
+                      >
+                        <span className="fw-bold me-2">Step {index + 1}:</span>
+                        {step.trim()}
+                      </li>
+                    ))}
+                </ul>
+              </div>
+
+              {/* Ingredients */}
+              <div>
+                <h5 className="text-success">🥗 Ingredients</h5>
+                <div className="d-flex flex-wrap gap-2 mt-2">
+                  {extractIngredientsWithMeasures(product).map((item, i) => (
+                    <span
+                      key={i}
+                      className="badge bg-light text-dark border rounded-pill px-3 py-2"
+                    >
+                      {item.ingredient} — <strong>{item.measure}</strong>
+                    </span>
                   ))}
-              </ol>
-            </div>
-            <div className="card p-4 mt-1 mb-5">
-              <strong>Ingredients</strong>
-              <ol className="mt-2">
-                {extractIngredientsWithMeasures(product).map((item, i) => (
-                  <li key={i}>
-                    {item.ingredient} — <strong>{item.measure}</strong>
-                  </li>
-                ))}
-              </ol>
+                </div>
+              </div>
             </div>
           </div>
         </div>
